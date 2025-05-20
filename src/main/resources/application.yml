@@ -1,0 +1,60 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: CONFIG-SERVER
+  profiles:
+    active: native
+  cloud:
+    config:
+      enabled: false
+      server:
+        git:
+          uri: https://github.com/Piyu-shiv/config-server.git
+          username: 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
+          password:
+          search-paths: /blob/main/application.yml
+          clone-on-start: true
+          default-label: main
+        native:
+          search-locations: file:///D:/work/spring-boot-microservices-udemy/config-server/src/main/resources/native
+      fail-fast: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: prodev
+    password: work
+
+  security:
+    user:
+      name: admin
+      password: password
+      roles:
+        - ADMIN
+
+
+my-security:
+  user:
+    name: client
+    password: password
+    roles:
+     - CLIENT
+
+
+
+
+
+management:
+  endpoint:
+    refresh:
+      enabled: true
+    env:
+      post:
+        enabled: true
+    web:
+      exposure:
+       include: busrefresh
+
+
+
