@@ -1,3 +1,32 @@
 token:
   expiration_time: 1000000
   secret: x11111111111111111111111111111111111yushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyushpiyush
+spring:
+  datasource:
+    #    url: jdbc:h2:file:D:/database-write/test;
+    #    username: sa
+    #    password: password
+    #    driverClassName: org.h2.Driver
+    #    jpa:
+    #      database-platform: org.hibernate.dialect.H2Dialect
+    #      hibernate.ddl-auto: update
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/photo_app_jaxrs
+    username: root
+    password: root
+  jpa:
+    #    database: photo_app_jaxrs
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQLDialect
+      generate-ddl: true
+    properties:
+      hibernate:
+      jdbc:
+      '[batch_size]' : 20
+      cache:
+      '[use_query_cache]': false
+      '[use_second_level_cache]': false
+      '[use_structured_entries]': false
+      '[use_minimal_puts]': false
